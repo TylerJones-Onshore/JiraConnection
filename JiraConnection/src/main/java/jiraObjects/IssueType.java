@@ -6,6 +6,6 @@ public class IssueType {
 	public String description;
 	public String iconUrl;
 	public String name;
-	public String subtask;
-	public String avatarId;
+	public boolean subtask;
+	public int avatarId;
 }
