@@ -1,7 +1,6 @@
 package jiraObjects;
 
-public class Component {
-	public String self;
+public class Priority {
 	public String id;
 	public String name;
 }

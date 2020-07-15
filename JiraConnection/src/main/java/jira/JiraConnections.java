@@ -2,12 +2,6 @@ package jira;
 
 import static io.restassured.RestAssured.given;
 
-import java.io.File;
-import java.util.ArrayList;
-import java.util.Base64;
-import java.util.HashMap;
-import java.util.List;
-
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import jiraObjects.Issue;
@@ -15,7 +9,13 @@ import jiraObjects.IssueUpdate;
 import jiraObjects.Project;
 import jiraObjects.ProjectIssuesReturn;
 
-public class Client {
+import java.io.File;
+import java.util.ArrayList;
+import java.util.Base64;
+import java.util.HashMap;
+import java.util.List;
+
+public class JiraConnections {
 	public String baseUri;
 	public String contentType = "";
 	private String encodedCreds;
@@ -143,7 +143,7 @@ public class Client {
 		return encoded;
 	}
 	
-	public Client(String username, String password) {
+	public JiraConnections(String username, String password) {
 		this.encodedCreds = encodeCredentials(username,password);
 	}
 }
