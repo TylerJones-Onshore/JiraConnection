@@ -10,6 +10,7 @@ public class IssueUpdate {
 	public String[] labels;
 	public String assignee;
 	public String issue;
+	public String[] components;
 	
 	public String getJson() {
 		List<String> parts = new ArrayList<String>();
@@ -17,11 +18,22 @@ public class IssueUpdate {
 		if(summary!=null&&!summary.equals("")) {
 			parts.add("\"summary\":[{\"set\":\""+summary+"\"}]");
 		}
+		if(components != null && components.length>0) {
+			String builder ="\"components\":[{\"set\":[";
+			for(int i = 0; i < components.length;i++) {
+				if(i>0) {
+					builder+=",";
+				}
+				builder+="{\"name\":\""+components[i]+"\"}";
+			}
+			builder+="]}]";
+			parts.add(builder);
+		}
 		if(description!=null&&!description.equals("")) {
 			parts.add("\"description\":[{\"set\":\""+description+"\"}]");			
 		}
 		if(assignee!=null&&!assignee.equals("")) {
-			parts.add("\"assignee\":[{\"set\":{\"name\":\""+assignee+"\"}}]");						
+			parts.add("\"assignee\":[{\"set\":{\"id\":\""+assignee+"\"}}]");						
 		}
 		if(labels!=null&&labels.length>0) {
 			String builder ="\"labels\":[{\"set\":[";

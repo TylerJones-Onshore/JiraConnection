@@ -11,4 +11,6 @@ public class Fields {
 	public ProjectShort project;
 	public UserComments comment;
 	public String summary;
+	public IssueType issuetype;
+	public Component[] components;
 }

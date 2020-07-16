@@ -73,7 +73,7 @@ public class Client {
 		headers.clear();
 		headers.put("Authorization", "Basic "+encodedCreds);
 		
-		String json =update.getJson();
+		String json = update.getJson();
 		Response res = put("/rest/api/latest/issue/"+update.issue,json);
 		String bodyString = res.getBody().asString();
 		int success = res.getStatusCode();
