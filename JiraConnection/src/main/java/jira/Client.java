@@ -34,7 +34,7 @@ public class Client {
 		return issueJson;
 	}
 	
-	public List<Issue> getAllProjectIssues(String projectKey) {
+	public List<Issue> getAllIssues(String projectKey, String modifier, String modifierValue) {
 		headers.clear();
 		headers.put("Authorization", "Basic "+encodedCreds);
 		headers.put("Accept","application/json");
@@ -45,6 +45,10 @@ public class Client {
 		
 		do {
 			String resource = "/rest/api/latest/search?startAt="+startAt+"&jql=project="+projectKey;
+			if(modifier!=null&&modifierValue!=null) {
+				resource += " and " + modifier + " ~ " + modifierValue;
+			}
+			
 			Response res = get(resource);
 			ProjectIssuesReturn partialReturn = res.then().log().all().extract().as(ProjectIssuesReturn.class);
 			for(Issue i:partialReturn.issues) {
