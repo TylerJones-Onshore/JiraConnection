@@ -2,8 +2,11 @@ package jiraObjects;
 
 import java.util.Map;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import jiraObjects.IssueTypeEnum.TypeCode;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class CreateIssueDetails {
 	public String summary;
 	public TypeCode iCode;

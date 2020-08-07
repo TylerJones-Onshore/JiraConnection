@@ -7,10 +7,10 @@ import jiraObjects.Project;
 
 public class GetProject {
 	@Test
-	public static void main(String[] args) {
+	public static void getProject() {
 		Client c = new Client("tjones@aarp.org","0yw8ZD5F9Xn7p2gVAF8pC588");
 		c.baseUri="https://aarpqmo.atlassian.net";
 		Project p =	c.getProject("TES");
-		System.out.println();
+		System.out.println(p.id);
 	}
 }
