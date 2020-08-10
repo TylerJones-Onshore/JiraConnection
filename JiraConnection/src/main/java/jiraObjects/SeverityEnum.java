@@ -1,4 +1,4 @@
-package projectTESObjectsMoveLater;
+package jiraObjects;
 
 public class SeverityEnum {
 	public enum Severity{

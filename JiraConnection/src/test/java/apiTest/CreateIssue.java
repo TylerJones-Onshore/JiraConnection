@@ -6,12 +6,12 @@ import jira.Client;
 import jiraObjects.CreateIssueDetails;
 import jiraObjects.Issue;
 import jiraObjects.IssueTypeEnum;
-import projectTESObjectsMoveLater.BrowserEnum.Browsers;
-import projectTESObjectsMoveLater.DefectTypeEnum.DefectType;
-import projectTESObjectsMoveLater.DeviceEnum.Devices;
-import projectTESObjectsMoveLater.EnvironmentsEnum.Environments;
-import projectTESObjectsMoveLater.PriorityEnum.Priority;
-import projectTESObjectsMoveLater.SeverityEnum.Severity;
+import jiraObjects.BrowserEnum.Browsers;
+import jiraObjects.DefectTypeEnum.DefectType;
+import jiraObjects.DeviceEnum.Devices;
+import jiraObjects.EnvironmentsEnum.Environments;
+import jiraObjects.PriorityEnum.Priority;
+import jiraObjects.SeverityEnum.Severity;
 
 public class CreateIssue {
 	public static void main(String[] args) {
