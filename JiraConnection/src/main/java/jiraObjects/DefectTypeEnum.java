@@ -34,7 +34,7 @@ public class DefectTypeEnum {
 			defectType = defectTypeString;
 		}
 	}
-	public DefectType getDefectType(String defectType) {
+	public static DefectType getDefectType(String defectType) {
 		DefectType d= null;
 		if(defectType.equalsIgnoreCase("FUNCTIONAL")) {
 			d=DefectType.FUNCTIONAL;

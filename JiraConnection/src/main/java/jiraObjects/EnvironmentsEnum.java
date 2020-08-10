@@ -23,7 +23,7 @@ public class EnvironmentsEnum {
 		}
 	}
 	
-	public Environments getEnvironment(String env) {
+	public static Environments getEnvironment(String env) {
 		Environments e= null;
 		if(env.equalsIgnoreCase("DEV")) {
 			e=Environments.DEV;

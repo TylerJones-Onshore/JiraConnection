@@ -20,7 +20,7 @@ public class BrowserEnum {
 			browser = browserString;
 		}
 	}
-	public Browsers getBrowser(String browser) {
+	public static Browsers getBrowser(String browser) {
 		Browsers b= null;
 		if(browser.equalsIgnoreCase("CHROME")) {
 			b=Browsers.CHROME;
