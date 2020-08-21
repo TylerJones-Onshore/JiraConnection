@@ -16,4 +16,5 @@ public class Fields {
 	public String summary;
 	public IssueType issuetype;
 	public Component[] components;
+	public String description;
 }
