@@ -49,7 +49,7 @@ public class IssueUpdate {
 			builder+="]}]";
 			parts.add(builder);
 		}
-		if(fixVersions!=null&!fixVersions.equals("")) {
+		if(fixVersions!=null&&!fixVersions.equals("")) {
 			parts.add("\"fixVersions\":[{\"set\":[{\"name\":\""+fixVersions+"\"}]}]");
 		}
 		
