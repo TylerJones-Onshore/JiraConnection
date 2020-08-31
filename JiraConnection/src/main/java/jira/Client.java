@@ -16,6 +16,7 @@ import jiraObjects.Issue;
 import jiraObjects.IssueUpdate;
 import jiraObjects.Project;
 import jiraObjects.ProjectIssuesReturn;
+import jiraObjects.Transition;
 import jiraObjects.TransitionObject;
 
 public class Client {
@@ -134,6 +135,28 @@ public class Client {
 	}
 
 	//Post
+	public void transitionIssueById(String key, String id) {
+		headers.clear();
+		headers.put("Authorization", "Basic "+encodedCreds);
+		headers.put("Accept","application/json");
+		headers.put("Content-Type","application/json");
+		Response r = post("rest/api/latest/issue/"+key+"/transitions","{\"transition\":{\"id\":\""+id+"\"}}");
+		r.then().log().all();
+		System.out.println(r.getStatusCode());
+	}
+	
+	public void transitionIssueByStatus(String key, String status) {
+		TransitionObject tO= getTransitions(key);
+		for(Transition t:tO.transitions) {
+			if(t.name.trim().replace(" ", "").equalsIgnoreCase(status.trim().replace(" ", ""))) {
+				
+				transitionIssueById(key,t.id);
+				break;
+			}
+		}
+	}
+	
+	
 	public Issue createIssue(CreateIssueDetails ci) {
 		headers.clear();
 		headers.put("Authorization", "Basic "+encodedCreds);
