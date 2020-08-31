@@ -16,6 +16,7 @@ import jiraObjects.Issue;
 import jiraObjects.IssueUpdate;
 import jiraObjects.Project;
 import jiraObjects.ProjectIssuesReturn;
+import jiraObjects.TransitionObject;
 
 public class Client {
 	public String baseUri;
@@ -107,6 +108,17 @@ public class Client {
 		headers.put("Accept","application/json");
 		
 		return get("/rest/api/latest/project/"+project).then().log().all().extract().as(Project.class);
+	}
+	
+	/**
+	 * @return the transitions available for the provided issue
+	 */
+	public TransitionObject getTransitions(String key) {
+		headers.clear();
+		headers.put("Authorization", "Basic "+encodedCreds);
+		headers.put("Accept","application/json");
+		
+		return get("rest/api/latest/issue/"+key+"/transitions").then().log().all().extract().as(TransitionObject.class);
 	}
 	
 	//Put
