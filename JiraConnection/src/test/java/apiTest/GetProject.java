@@ -8,9 +8,9 @@ import jiraObjects.Project;
 public class GetProject {
 	@Test
 	public static void getProject() {
-		Client c = new Client("tjones@aarp.org","0yw8ZD5F9Xn7p2gVAF8pC588");
-		c.baseUri="https://aarpqmo.atlassian.net";
-		Project p =	c.getProject("TES");
+		Client c = new Client("username should go here", "jira api key goes here");
+		c.baseUri = "https://yourcompany.atlassian.net";
+		Project p =	c.getProject("Project Key here");
 		System.out.println(p.id);
 	}
 }
