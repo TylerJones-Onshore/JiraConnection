@@ -15,15 +15,15 @@ import projectTESObjectsMoveLater.SeverityEnum.Severity;
 
 public class CreateIssue {
 	public static void main(String[] args) {
-		Client c = new Client("tjones@aarp.org","0yw8ZD5F9Xn7p2gVAF8pC588");
-		c.baseUri="https://aarpqmo.atlassian.net";
+		Client c = new Client("username should go here", "jira api key goes here");
+		c.baseUri = "https://yourcompany.atlassian.net";
 		c.contentType = "application/json";
 		
 		CreateIssueDetails ci = new CreateIssueDetails();
 		ci.summary = "Creating a ticket via java framework";
 		ci.description = "This ticket was created by utilizing the JIRA api.";
 		ci.iCode = IssueTypeEnum.TypeCode.BUG;
-		ci.project = "16174";
+		ci.project = "project id goes here";
 		ci.customFields = new HashMap<String,String>();
 		Browsers browser = Browsers.CHROME;
 		ci.customFields.put(browser.getFieldId(),"[{\"value\":\""+ browser.getBrowser()+"\"}]");
