@@ -19,9 +19,9 @@ public class AttachImage {
 
 		if (file.exists()) {
 
-			Client c = new Client("tjones@aarp.org", "0yw8ZD5F9Xn7p2gVAF8pC588");
-			c.baseUri = "https://aarpqmo.atlassian.net";
-			System.out.println(c.addAttachment("TES-1", file));
+			Client c = new Client("username should go here", "jira api key goes here");
+			c.baseUri = "https://yourcompany.atlassian.net";
+			System.out.println(c.addAttachment("JiraIssueKey here", file));
 		} else {
 			Assert.assertEquals(true, false);
 		}
